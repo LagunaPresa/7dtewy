@@ -1,2 +1,5 @@
 # 7dtewy
-The codecs for "that game". This repository contains SIGNIFICANT SPOILERS for that game.
+
+> **Warning**
+> This repository contains SERIOUS SPOILERS for that game.
+> 深刻なネタバレが含まれています。
