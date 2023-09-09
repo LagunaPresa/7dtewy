@@ -52,11 +52,7 @@ func EncodeCandidates(plain string) ([]string, error) {
 }
 
 func key(word string) int {
-	i := score(word)
-	if i <= 0 {
-		return 0
-	}
-	return int(math.Round(float64(i) / 12.0))
+	return int(math.Round(float64(score(word)) / 12.0))
 }
 
 func score(word string) int {
