@@ -52,7 +52,7 @@ func EncodeCandidates(plain string) ([]string, error) {
 }
 
 func key(word string) int {
-	i := score(word) - len(word)
+	i := score(word)
 	if i <= 0 {
 		return 0
 	}
@@ -62,7 +62,7 @@ func key(word string) int {
 func score(word string) int {
 	var s int32
 	for _, char := range word {
-		s += char + 1 - 'a'
+		s += char - 'a'
 	}
 	return int(s)
 }
