@@ -15,13 +15,12 @@ func DecodeCandidates(encoded string) ([]string, error) {
 		return nil, fmt.Errorf(`[a-z] characters can be used: "%s"`, encoded)
 	}
 	var candidates []string
-	cand := encoded
 	// Not 26
 	for i := 0; i < 25; i++ {
+		cand := shift(encoded, -i)
 		if i == key(cand) {
 			candidates = append(candidates, cand)
 		}
-		cand = shift(cand, -1)
 	}
 	return candidates, nil
 }
