@@ -15,13 +15,12 @@ func DecodeCandidates(encoded string) ([]string, error) {
 		return nil, fmt.Errorf(`[a-z] characters can be used: "%s"`, encoded)
 	}
 	var candidates []string
-	cand := encoded
 	// Not 26
 	for i := 0; i < 25; i++ {
+		cand := shift(encoded, -i)
 		if i == key(cand) {
 			candidates = append(candidates, cand)
 		}
-		cand = shift(cand, -1)
 	}
 	return candidates, nil
 }
@@ -53,7 +52,7 @@ func EncodeCandidates(plain string) ([]string, error) {
 }
 
 func key(word string) int {
-	i := score(word) - len(word)
+	i := score(word)
 	if i <= 0 {
 		return 0
 	}
@@ -63,7 +62,7 @@ func key(word string) int {
 func score(word string) int {
 	var s int32
 	for _, char := range word {
-		s += char + 1 - 'a'
+		s += char - 'a'
 	}
 	return int(s)
 }
