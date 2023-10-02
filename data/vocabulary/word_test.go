@@ -6,7 +6,7 @@ import (
 
 	"github.com/stretchr/testify/assert"
 
-	"github.com/LagunaPresa/7dtewy/codec"
+	"github.com/n39i/7dtewy/codec"
 )
 
 func TestDict(t *testing.T) {
