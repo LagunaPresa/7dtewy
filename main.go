@@ -6,7 +6,7 @@ import (
 	"os"
 	"strings"
 
-	"github.com/LagunaPresa/7dtewy/codec"
+	"github.com/n39i/7dtewy/codec"
 )
 
 // $ go run . lipps duxrj

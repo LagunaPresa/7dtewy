@@ -1,4 +1,4 @@
-module github.com/LagunaPresa/7dtewy
+module github.com/n39i/7dtewy
 
 go 1.21
 
